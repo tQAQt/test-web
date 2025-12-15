@@ -1,650 +1,798 @@
 <!DOCTYPE html>
-<html class="light" lang="zh-Hant"><head>
+<html lang="zh-Hant"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>日本信用卡優惠網頁首頁</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<title>日本信用卡優惠專案</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-      html {
-        scroll-behavior: smooth;
-      }
-      .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-      }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "primary": "#137fec",
-              "background-light": "#f6f7f8",
-              "background-dark": "#101922",
+              "primary": "#ec1313",
+              "background-light": "#ffffff",
+              "background-dark": "#ffffff", 
+              "card-dark": "#ffffff",
+              "surface-dark": "#f3f4f6", 
             },
             fontFamily: {
-              "display": ["Work Sans", "Noto Sans TC", "sans-serif"]
+              "display": ["Be Vietnam Pro", "Noto Sans TC", "sans-serif"],
+              "body": ["Noto Sans TC", "sans-serif"]
             },
             borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            animation: {
+                'fade-overlay': 'fadeOverlay 12s infinite',
+                'fade-overlay-delay': 'fadeOverlay 12s infinite 6s',
+            },
+            keyframes: {
+                fadeOverlay: {
+                    '0%': { opacity: '0' },
+                    '20%, 50%': { opacity: '1' },
+                    '70%, 100%': { opacity: '0' },
+                }
+            }
           },
         },
       }
     </script>
+<style>
+        html { scroll-behavior: smooth; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .ticket-mask-l {
+            position: absolute;
+            top: 50%;
+            left: -12px;
+            width: 24px;
+            height: 24px;
+            transform: translateY(-50%);
+            border-radius: 9999px;
+            background-color: #f3f4f6;
+            box-shadow: inset -3px 0 2px rgba(0,0,0,0.05);
+        }
+        section#coupons .ticket-mask-l, section#coupons .ticket-mask-r {
+             background-color: #f3f4f6;box-shadow: none;
+        }
+        .ticket-mask-r {
+            position: absolute;
+            top: 50%;
+            right: -12px;
+            width: 24px;
+            height: 24px;
+            transform: translateY(-50%);
+            border-radius: 9999px;
+            background-color: #f3f4f6;
+        }.snap-x-mandatory {
+            scroll-snap-type: x mandatory;
+        }
+        .snap-center {
+            scroll-snap-align: center;
+        }
+    </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark pb-16 xl:pb-0">
-<div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
-<div class="w-full">
-<div class="@container">
-<div class="@[480px]:p-4">
-<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="A vibrant night view of a street in Tokyo, with bright neon signs and bustling city life, representing travel and shopping in Japan." style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDnMXGuzLw1L9BBXa3tf4UgATygXBIfjrb1v9NW0D2f1xyR-xA74NNCRKAD7ANA4Vlh_fMkfs8AsLe-3E05Ojgif25nHq_4quLePfQ7iUNvOyZDwkBssRnw_na8SOTlN7qjNEv6doFCze03Ul7J3OMHV4SWau8WUBm4bNJa7J4-lkRKn29hiKzC1K2MzkCikRCI7q1bmpxLLYE3Z8Q7f8yeL3NNiFAgu2bKNLObmeHQ_IQ4mpe5n7ZkMBBnNZ623N33xRi3BsWF3yyO");'>
-<div class="flex flex-col gap-2 text-left">
-<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">暢遊日本，刷對卡，省更多</h1>
-<h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">一次集結所有熱門商家信用卡優惠與獨家折扣碼</h2>
+<body class="bg-gray-50 text-gray-900 font-body min-h-screen flex flex-col overflow-x-hidden pb-24 xl:pb-0">
+<header class="w-full bg-white border-b border-gray-200 px-6 md:px-10 py-4 flex items-center justify-between z-50 relative shadow-sm">
+<div class="flex items-center gap-3 text-gray-800">
+<div class="size-5 flex items-center justify-center bg-primary rounded text-white shadow-[0_0_8px_rgba(236,19,19,0.3)]">
+<span class="material-symbols-outlined text-xs">credit_card</span>
 </div>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]">
-<span class="truncate">查看所有優惠</span>
+<h2 class="text-gray-900 text-lg font-bold leading-tight tracking-wide">日本信用卡優惠專案</h2>
+</div>
+<nav class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+<a class="hover:text-primary transition-colors" href="#merchants">精選商戶</a>
+<a class="hover:text-primary transition-colors" href="#coupons">優惠折扣</a>
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-lg">account_circle</span> 登入
+        </a>
+</nav>
+</header>
+<section class="relative h-[65vh] md:h-[75vh] w-full bg-gray-100 overflow-hidden group">
+<div class="absolute inset-0">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFrMmmtN3sfZJDHPMJ2juE0XZcNAo2HIbOJ9azj_hzP42WEqZCJOrB_jJvWfseyg1JzjXeQRWQ0tdT5_lMunJ_WZomGPzDisU7rfvF1NutRGfwlvAle90GBa_bXyPk94R81r54mkrWcrWwSuzubjswJFBkfrDXgq_t8eamEEJLNwcE49u8Le7gHezy_3n8TlJ20PXjB-oFdbRYMGJQErlw-s7qEo6NU_XGVfKZB2j8v7MGWra0a8Np9kwYzI3P8-zD04mNTXYDybA');">
+<div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent"></div>
+</div>
+<div class="absolute inset-0 bg-cover bg-center animate-fade-overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCslJl3I7DXxXPmsBLxNkG0KRM8JHhOXyKSH8BnqQcgM0lujNbkez106QmNxjWRkmgjlJUt-mkUYSakCYwuRy32LgD9szXqC3s0TwKjHR1zBpH7MXhluGCT5jXfQWUWajRhS-ux3yEvGBFoRq5Ms2VmNSi-OxxEO4aVG0SfFejA24Qy15K2h7VTDoob2KHc5yUNf-FWosjNJoenJ9Xz1hm0PGtSzfwtAEg4UO_C0V8nvOYKrGyIFIW8lPEax8Z-6XZa0ECYrXwIJ7Q');">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/60 to-transparent"></div>
+</div>
+<div class="absolute inset-0 bg-cover bg-center animate-fade-overlay-delay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCslJl3I7DXxXPmsBLxNkG0KRM8JHhOXyKSH8BnqQcgM0lujNbkez106QmNxjWRkmgjlJUt-mkUYSakCYwuRy32LgD9szXqC3s0TwKjHR1zBpH7MXhluGCT5jXfQWUWajRhS-ux3yEvGBFoRq5Ms2VmNSi-OxxEO4aVG0SfFejA24Qy15K2h7VTDoob2KHc5yUNf-FWosjNJoenJ9Xz1hm0PGtSzfwtAEg4UO_C0V8nvOYKrGyIFIW8lPEax8Z-6XZa0ECYrXwIJ7Q');">
+<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/60 to-transparent"></div>
+</div>
+</div>
+<div class="relative z-10 h-full max-w-[1200px] mx-auto px-6 md:px-10 flex flex-col justify-center gap-6 pt-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-bold w-fit mb-2 backdrop-blur-sm shadow-sm">
+<span class="material-symbols-outlined text-base">flight_takeoff</span>
+            日本旅遊首選
+        </div>
+<h1 class="text-4xl md:text-6xl font-bold text-gray-900 max-w-2xl leading-tight drop-shadow-sm">
+            暢遊 <span class="text-primary">日本</span> <br/>盡享尊榮刷卡禮遇
+        </h1>
+<p class="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed">
+            精選超過 50 家日本熱門商戶，包含百貨、藥妝、電器與交通，最高享 10% 現金回饋與免稅服務。
+        </p>
+<div class="pt-6 flex gap-4">
+<button class="bg-primary hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-red-500/30 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                開始探索
+                <span class="material-symbols-outlined text-sm">arrow_downward</span>
+</button>
+<button class="bg-white/60 hover:bg-white text-gray-800 font-bold py-3 px-8 rounded-lg border border-gray-300 backdrop-blur-sm transition-all flex items-center gap-2 shadow-sm">
+                了解更多
+            </button>
+</div>
+</div>
+<div class="absolute bottom-10 right-10 hidden md:flex gap-3 z-20">
+<button class="size-12 rounded-full bg-white/40 hover:bg-primary text-gray-700 hover:text-white flex items-center justify-center backdrop-blur-sm transition-all border border-white/40 group shadow-sm">
+<span class="material-symbols-outlined group-hover:-translate-x-1 transition-transform">chevron_left</span>
+</button>
+<button class="size-12 rounded-full bg-white/40 hover:bg-primary text-gray-700 hover:text-white flex items-center justify-center backdrop-blur-sm transition-all border border-white/40 group shadow-sm">
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
 </button>
 </div>
-</div>
-</div>
-</div>
-<div class="max-w-6xl mx-auto w-full flex flex-col items-start px-4 py-8">
-<div class="w-full h-20"></div>
-<div class="fixed top-4 left-0 right-0 z-50 px-4">
-<div class="max-w-6xl mx-auto w-full">
-<label class="flex flex-col min-w-40 h-14 w-full">
-<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-lg bg-white dark:bg-slate-800">
-<div class="text-slate-500 dark:text-slate-400 flex items-center justify-center pl-4 rounded-l-xl border-r-0">
+</section>
+<div class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 py-4 shadow-sm">
+<div class="px-6 md:px-10 w-full">
+<label class="flex flex-col w-full group mx-auto">
+<div class="flex w-full items-stretch rounded-xl h-14 bg-gray-100 border border-gray-200 shadow-inner focus-within:ring-2 focus-within:ring-primary focus-within:bg-white focus-within:border-transparent transition-all overflow-hidden relative">
+<div class="text-gray-400 flex items-center justify-center pl-5 pr-3 group-focus-within:text-primary transition-colors">
 <span class="material-symbols-outlined">search</span>
 </div>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-slate-800 dark:text-slate-200 focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-transparent h-full placeholder:text-slate-500 dark:placeholder:text-slate-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" id="searchInput" placeholder="搜尋商家、品牌..." value=""/>
+<input class="flex w-full flex-1 bg-transparent border-none text-gray-900 placeholder:text-gray-500 px-2 h-full text-lg focus:ring-0" id="searchInput" placeholder="搜尋商戶（例如：Bic Camera, 伊勢丹, 松本清...）"/>
+<div class="pr-4 flex items-center cursor-pointer text-gray-400 hover:text-gray-600" id="clearSearch">
+<span class="material-symbols-outlined text-sm">close</span>
+</div>
 </div>
 </label>
 </div>
 </div>
-<div class="w-full flex relative">
-<div class="fixed top-1/2 -translate-y-1/2 right-4 h-auto hidden xl:block z-40">
-<div class="flex flex-col items-end gap-2 p-3 w-48 bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-lg shadow-lg border border-slate-200 dark:border-slate-700">
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-department">
-<p class="text-sm leading-normal">百貨</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-transport">
-<p class="text-sm leading-normal">交通／鐵道／租車</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-food">
-<p class="text-sm leading-normal">美食餐廳</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-attraction">
-<p class="text-sm leading-normal">景點／樂園</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-drugstore">
-<p class="text-sm leading-normal">藥妝店</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-souvenir">
-<p class="text-sm leading-normal">伴手禮</p>
-</a>
-<a class="flex h-10 w-full shrink-0 items-center justify-start gap-x-2 rounded-lg px-4 text-slate-700 dark:text-slate-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary focus:font-bold dark:focus:bg-primary/20 dark:focus:text-primary dark:focus:font-bold" href="#category-electronics">
-<p class="text-sm leading-normal">電子商店</p>
-</a>
+<div class="relative flex flex-1 bg-gray-50 max-w-[1600px] mx-auto w-full items-start">
+<main class="flex-1 w-full pb-20 relative z-10 order-1" id="merchants">
+<div class="px-6 md:px-10 py-10 max-w-[1000px] mx-auto">
+<div class="category-section mb-20 scroll-mt-40" id="cat-dept">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4 sticky top-24 bg-gray-50/0 z-0">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">storefront</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">百貨公司</h3>
 </div>
-</div>
-<div class="w-full flex flex-col gap-4 p-4">
-<div class="scroll-mt-24 category-container" id="category-department">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">百貨</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="丸井百貨 使用EPOS卡可享9折優惠。部分商品不適用此優惠 (如食品、餐廳、特價品)。優惠券可能需要出示護照。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Marui Department Store" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDCkhWtOrv3-RMoVWEnDNQHltnVdr4Axg74_V8CL-2qQ6CVBgbzRz8Bq7K39NjGsbUGlliXQiZaLBtJy1qJUDT7FKaJV2yed4R-hq4TbXVmevEa0Wnvdu-cS31mnvLEkYNJnUvr7FJvcOT0Nrr106GtwQkhdWh4Tlk7AjFyyXMTfCJeN9TmHXHrM9lk-r0vmhnvC135iAaVbRhuVfR7lRi3mt1vfhxzcI7ApKeG4_behi7uc7K50U8ZDGvoimI7TfpIdTVSQ1bDXFrd");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">丸井百貨</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用EPOS卡可享9折優惠。<br/>＊部分商品不適用此優惠 <span class="text-slate-400 dark:text-slate-500">(如食品、餐廳、特價品)</span>。<br/>＊優惠券可能需要出示護照。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="高島屋 外國遊客出示護照即可獲得95折購物卡。單筆消費滿3,000日圓以上方可使用 (不含稅)。部分專櫃及商品不適用。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Takashimaya" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC6X9QXhkJ-AyRUKyqJ_4YyUdKh-dVhKP677OoeSdhNS1xy1w4T8A7NRN0CTiY0RohdLnMoyrN6QBz2v4MhJ-5UKZ_oimrmLvubgrwsSyeu6YgGw-3-apfyGyNtI_noavQ51CBilarD59BPRjd5ZA4Wp5P4RodJHBu9ce2j5WquKnR3f84JwFjQYhboYMwZCEmq8H797ciGe2tXbORdVHSxWF_jGLnr9sCfcr5zS8-Jq8A8xbdEljibZAkNhV1ek_kq9SLYTR5b-t5Y");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">高島屋</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊外國遊客出示護照即可獲得95折購物卡。<br/>＊單筆消費滿3,000日圓以上方可使用 <span class="text-slate-400 dark:text-slate-500">(不含稅)</span>。<br/>＊部分專櫃及商品不適用。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="伊勢丹 使用指定信用卡消費享5%現金回饋。活動期間可能有所變更，詳情請見官網。需登錄活動方可享有回饋。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Isetan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCvXBWDlqIdPz2pmjVMa1ch3ITtb8PwkzEaia9lETFWG7BHg0xEgpQ5Yq2iJHGeX3ItLXABLF9_kvtML1Y6yJRguJ0KR23ihFQC7vornE9u1hKrdssHdV14bWvtWeVea6jJMtBEWEc9dIKo5tJ6lMa8D6orYAfSEM2hnwx78NNn2j0gYgTW2gmE4zWKJ9fmn5WsmbDMlu0_X99P5COgkNv9XScdnuyaTR80Y2Er_jsmpXqN54ruuMf4aY7o5dB9uVOrima2Ev1yPKfx");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">伊勢丹</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用指定信用卡消費享5%現金回饋。<br/>＊活動期間可能有所變更，詳情請見官網。<br/>＊需登錄活動方可享有回饋。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="三越百貨 外國遊客憑護照可領取5%折扣卡。部分品牌不參與此活動 (如LV, Chanel等)。折扣卡有效期限為發卡日起一個月。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Mitsukoshi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDyTbPT7XdYWl6PmShC7u8UyBfMMdfNqvRTTBurHKhDyGK1KyRx6QgpnZZ_m63eeSwtiZu4yFHTOoZZNFP0f2uBNj_rjUBlkKs-3-rEgVnc9KCUlFfadLGImtB-w51Gk14dTC8JsVtOIDo_vj5mRiuNDyfLHpQfSUsYR0nxGe1jYdy14kgP21sBh23zaBMusONH6kMWXhN90Sp8rd7QRSmhfbZJ8dD451xvA-hggdblZO73Kjopk0gfyDnTrxwRY01mnjfQI6HUgbqz");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">三越百貨</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊外國遊客憑護照可領取5%折扣卡。<br/>＊部分品牌不參與此活動 <span class="text-slate-400 dark:text-slate-500">(如LV, Chanel等)</span>。<br/>＊折扣卡有效期限為發卡日起一個月。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-transport">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">交通／鐵道／租車</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="SUICA 使用Apple Pay綁定JCB信用卡儲值，享3%現金回饋。活動需登錄，回饋上限依各銀行規定。此活動僅限實體卡儲值。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for SUICA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDm_dBsYCil8UAObxxMsJsjWyV1vqoiCmJXx6SG0kMysCrI1Kx92rT9EWILghuoXJQGY4MLvlqEM4U5I5z7y-QjelaBk_HOnKMHQXMZjRz_NoFendLVC4-0XqE7-EA0yteAv_KlK5um7W-Osb_trv_1eUTQzEfbDi2CG29zBZIf4WfN9e8Jx3ngmOVKzk8QcQvrcnynqQ1a31xolalp-SRIapa1fdulmkCg7yNbtRC_wl8CDVFRLYqDTBcaPQCOeA50vKVOjNi8NwVV");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">SUICA</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用Apple Pay綁定JCB信用卡儲值，享3%現金回饋。<br/>＊活動需登錄，回饋上限依各銀行規定。<br/>＊此活動僅限實體卡儲值。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="JR東日本 透過JR東日本官網使用指定信用卡購票，享5%折扣優惠。適用於新幹線及部分特急列車。詳細適用路線請查詢官網。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for JR East" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBpA_4t1whTggG1UxMsrIKg-x77gVgVxiWD3jX-d3YkWKY_XUy1d4wJ4m6TUKBrhHYfirJ4qEuNKjUmelBnFQiwh14rwN5uqE89FrFK44y5uE5msnrTPXHzRCHCY9DqaGHQ0rlfE-uQ7Au7zs0Iy9DjutBvCj6uMLYAi3bQYW2VQFlFfT1d9k5b8qbr2hVAMxFfGE-nDYgGLKIRLJWrBTD03fCWWht9fuBY3x3kQRacQeh8_vsm3kJ7xrAF-A9YWx5JUbrUW2GiHuE5");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">JR東日本</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊透過JR東日本官網使用指定信用卡購票，享5%折扣優惠。<br/>＊適用於新幹線及部分特急列車。<br/>＊詳細適用路線請查詢官網。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="TOYOTA租車 使用樂天信用卡預約並付款，可享10%租車折扣。需透過專屬頁面預約。優惠不包含過路費及油費。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for TOYOTA Rent a Car" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAByMaT9Gd4FOf1ZNfUde4OXkRS06kb5TYHtGWaKcEpq565xC2EV4jo0A3qErCTQPjVcOESqGUNfvekSp8af6I_Llj9WWA2lF3iz40i2Jv6PSSP9748cvyyoPcG6m0UsmP1nKrQSNVxUoeKWSweRw99tUl3zLxTBgMcMgKVlNBwJGV_Xq3Rl-LGbpBb-HthgZvznGc_oK09T-T-1uFjMiLoO_EIuZnX0NZRgCfmGx83nyRzVLCd8nna2t-BE6D7j9v3apaY7jyKbHdx");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">TOYOTA租車</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用樂天信用卡預約並付款，可享10%租車折扣。<br/>＊需透過專屬頁面預約。<br/>＊優惠不包含過路費及油費。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="JapanTaxi 首次使用JapanTaxi App並綁定JCB信用卡，可獲得1000日圓優惠券。優惠券有使用期限限制。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for JapanTaxi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFi65n88q91NLsncOsNvqx1ion2rm8wRi1XkHBcaU5fo2wCg7wOdwX6FjRPIy_HxD4vfq7adU8nb-TwlNnH1_9-xbZOs6XoBZz9e7UwitR3AKhf4MUUvivSEWOMr6baAPBkKkUPkzwWe2qbMe2kx94Y0qx8iki8ueG8wmGytgrsHwmh7EM-H7vSWYpG2O8fTGU3_SI1SaHKJ2axYt4Ki3PIAkkk_9ZDdw1xKtT95iI456mdVQS992Z9CfW0QBHLJ5AT5IWuJUub_DH");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">JapanTaxi</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊首次使用JapanTaxi App並綁定JCB信用卡，可獲得1000日圓優惠券。<br/>＊優惠券有使用期限限制。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-food">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">美食餐廳</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="一蘭拉麵 使用美國運通卡消費滿2000日圓，即可免費獲得一份加麵。此優惠每桌限用一次。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Ichiran Ramen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAyTEGH8CSx4fVrX2-iwNY78SWISXOVQdJId-CdT_5-Vk4WOT6TtXjxxRrM4mNZ-Jx0uLGJ_w33XgQcjHfGY9oOfUD1r2KZ2SJBWBM1_XQQykROgo8PGC-Sum-nAl0EAL2vsUCQpDlzbTLz1zAN8hH_PHI8N4oXttnj74-f3svb9ycsDh6ahEOtowlHot76tqQcjVlrsjcm-wM1ZmeL7un9D5PE4FY_zyUTwQ5jgSY7XJHMItrJqCu8CmHcAVR231AzwTTWTEhVvdah");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">一蘭拉麵</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用美國運通卡消費滿2000日圓，即可免費獲得一份加麵。<br/>＊此優惠每桌限用一次。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="壽司郎 使用特定信用卡或行動支付，可享5%現金回饋。活動期間與回饋上限依各支付通路公告為準。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Sushiro" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBskjx_kddZ6-bUDuRw8yF-mDmosknKr1s35OAlG1ZpAnegiUcP4hIDWBkqCpnVjrnocVcAZuL63D5of9xx01LK5iRXa0MjwtAD8OlKPXsXkFzEAjR7C_5p8PjdwHSDQFRNUUt-V6BBLF9EY3t9pJFTYePTxbuN4Z-jXu7_3wn1zMgtadKuuzTWB-rMZpTg4SkZ6ubuXB5nhwqOBzPlaDz1_JJe3it-Bis0jd3CizBZqRDT3sTc3mHQbAGHoMknvlynq5FfVf-SjYxo");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">壽司郎</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用特定信用卡或行動支付，可享5%現金回饋。<br/>＊活動期間與回饋上限依各支付通路公告為準。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="星巴克 使用星巴克App線上儲值，綁定指定信用卡可享點數加贈。加贈點數比例依卡別而異。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Starbucks Japan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbmsEc6lCfqBDWGs-_mdzNRvjQp9O23nwFd6OjvBTgbqhdpO7QN-NKupTrYEl6m2xLWIlD_ZYSJS7eYeXkEDoNUPo4CNrI8QS89Ng9OPtAXzi-yjSkLAH2feRWwpq0vTgzTp9a7vAoUIhBUHzFQittLhy6xEHjpAVZk_bROXJxuOp6cdZ5DZPZTSWVVCGMNjX0xyV7tJSIrl5goIFozoJOOaw2xPmVXLnyA5Xee3OXEE2bSYSfJupJXYRGDcxPxJNIVY-d1-5CtR9m");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">星巴克</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用星巴克App線上儲值，綁定指定信用卡可享點數加贈。<br/>＊加贈點數比例依卡別而異。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="麥當勞 使用Visa Contactless付款，享3%回饋。部分分店不適用，詳情請洽店員。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for McDonald's Japan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfWbgecg1DCoXvrn2MyWI1gtmwbMjr9Gbi-C9oPFLe9musySORe-kPcfp-FFnWVvaMNVTOruyCNBnr1uPa9pTRKxSiCh6sQXQcM-xSiNKDkRLPqJiaTeRiulKRzJ7-_S2EDYrmhdnW4Jk4Xnw87Y4egAAYCDqlo-wSU2cn-JVTpT5jIO7KA8n2jWHcHsvTROTQk_D651DfzfL4Qyd6ND614wWsxw9ivYpOVhPOqX3OvOt6uC01bQcAyyW7XtZUQt6LcaagnprYNIeH");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">麥當勞</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用Visa Contactless付款，享3%回饋。<br/>＊部分分店不適用，詳情請洽店員。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-attraction">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">景點／樂園</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="東京晴空塔 使用JCB卡於現場售票處購買門票，可享9折優惠。每張卡最多可購買5張門票。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Tokyo Skytree" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCMRvFayPzeURDtRVsHRVQzHRl-wZghB_gBUzUB-IvLF6NkwDHTi5BtANCBssrxU806HNgL9wlnjL-nBv50b4eIqjDRRYZEKXIcgj1r3ErRK4f6W-2GQaeJVnGROvGm9nUWTXnADP3lg21yuCtFf_IKGOt6jUECpbZRsqYGoljYSHQYGL7_Hiq3HcNEzsFAVcrVsfRVfOjWNIA8FtP-A2xGgXBi7gmGTdxZqQVK67LmlvyRY-ojU0mHjBULVGviRD1W15Viuhe1SB5A");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">東京晴空塔</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用JCB卡於現場售票處購買門票，可享9折優惠。<br/>＊每張卡最多可購買5張門票。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="東京迪士尼 透過Klook或KKday等平台使用指定信用卡購票，可享折扣或點數回饋。優惠內容依各平台公告為準。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Tokyo Disneyland" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqy6cdFUNCJCEvg7aJ2Dg9CKro-XXLexHcKihebc1G3cVRLcqDgWITkKa-ZcuwPd7HvAupnux2c25LitZzzXBfhE1mL77SNE0fJroKe8Zqw7QbDc9GcJRAGipJnXo2tRsj1AnA8--GEohdwwRlzuAAevmN7gH8c-QXw3_MReq6BFlFy-rdNnX6OD2rJ7UjlvgCbZ9Y4dK-0c1U3-gT-ZUkqSmVBqGZe_k5shKjEMc3wGsJ9EiQOli7cJNoeQJmUGMr8A-zRiK2ZiIA");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">東京迪士尼</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊透過Klook或KKday等平台使用指定信用卡購票，可享折扣或點數回饋。<br/>＊優惠內容依各平台公告為準。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="環球影城 刷JCB卡購買環球影城快速通關，可享專屬休息室服務。休息室需提前預約，名額有限。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Universal Studios Japan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHHYf0sL8G0u0y5BbEnzS_eh644pqzhYy6l-GyTqxNIptgVELzxpdccQ508U6xP_tg7G_fHIUC5mIat_RXG7pasY7jYLX0os5ZR1VmnQOMR3h3xSFsmur6OTPqyia6wOEv6JvgYLSOiS67x5BlHC_cAc2CQklojmUU90C1ufQkBuQvXL6hr5Hu3BZ1FWvAlx9JBeNdoGOABTOPTsjb2VVcQQSRWpRKF__f-plFspY8ld3-_pjrEROdSNngjLjK_Ke0oAdeHt7CpJLy");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">環球影城</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊刷JCB卡購買環球影城快速通關，可享專屬休息室服務。<br/>＊休息室需提前預約，名額有限。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="三鷹之森吉卜力美術館 門票採預約制，無現場售票。建議透過海外合作旅行社或線上平台提早預訂，部分平台提供信用卡優惠。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Ghibli Museum" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCgWNDKgOVI3zEXnzr-KuQo2DxFlqCS-cfLlKv7tCEtJ1j8qh2kVcqZn0sS6uS-sl2da4QtaSLTHD-4m5RJmptYrAebz07NP8VWRpRP5jsCyOP5_2DmOE1hk7E87gynKfrqyWgWylf91i6WUWxuF8WbZ0jWM0-_t5UbN-vDbDuGHRFmxpyN-z2hnfGfixi1hHaT6PIdZ0ck-EXNlVjG5j1SvEWmnmZQ984WUFv7boqU7eGRFF--PZJhFQXDGdTVYT0PK21FLEnNiF_U");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">三鷹之森吉卜力美術館</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊門票採預約制，無現場售票。<br/>＊建議透過海外合作旅行社或線上平台提早預訂，部分平台提供信用卡優惠。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-drugstore">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">藥妝店</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="松本清 使用樂天信用卡享最高5%優惠。消費滿1萬日圓享3%折扣，滿3萬日圓享5%折扣。需出示優惠券。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Matsumoto Kiyoshi" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuABEJSweC4NdNdkhOhjdDyec_xQ-S-AdpFUpjkJ0LeLuZ1Qwm0bu6GXWtfPph5N5or8pJ-V3V0punRx3dDhK4OhgCWA9TMpNIJ_RA4NnFh0f0CvObuem3GmHD4XJ-UKYKw6Fbl9E-hUjXtm73YTLb76rrh0SQsFx4G6eeTCIIsGHZWdz3ba8SmBSWtPTDU23u1ekdKcmaPsqkTLqVF7IjyAl4zlVXv47kN2G-XokWL8c1wDiBOtsIkHNi-iaeVw2Zyz_X_2Bi8NwfrX");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">松本清</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用樂天信用卡享最高5%優惠。<br/>＊消費滿1萬日圓享3%折扣，滿3萬日圓享5%折扣。<br/>＊需出示優惠券。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="大國藥妝 使用JCB卡消費滿額，除免稅外最高可再享7%折扣。詳細金額級距請參考店內公告。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Daikoku Drug" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDEuXPrvi8Y6-pO5XW2oTQ69zNiG6ruMdLmmoLBl9o5GDAWrQlA7zMknWs4R0hgSJszQqGtOEq3mxfGiGspCXpj0E9w1LktKYdVEPOYQY3fqJNwWVKMtlgYSkpO6U1jH9DaYmVXTrJdYkulXerSN_KAelX9DZaLEIRvq-SHhfK84nqppZc37hn7ltNUhGq8zUc-CLoXJiPskY8yoRsbFTmYhroiAjCWW5_NF2ECiu4-R28F6zZJ86LAH6jRFk7jxHB_hdNeslUF8leA");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">大國藥妝</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用JCB卡消費滿額，除免稅外最高可再享7%折扣。<br/>＊詳細金額級距請參考店內公告。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="Sun Drug 使用指定信用卡消費滿額享5%回饋。優惠券需搭配護照使用。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Sun Drug" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBmw1NCHe_V7DGMsxwXVJy1oZYprjnHysEOE9czlp09pZjBwkjdkH_zeZ6Ocu_zUeSTGqBE0HO1Aw4yB_PdQzIqP9j6xVIHCXigCT5ciRUoCvEit2w2yOQ41lcN5ur7_oY5DAMaTnkQv2hsmzrc2UYngW5n2MdVx8GbvMuiln-dgNpfJPpXB833fRB0-QVdhTRP2gFKECsadV5A94pCuZ9s1buy_oeho5Wkj2kcIjXdThk738XlF3sjySj2Si2hbc5ZTuz0e_ya6xky");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Sun Drug</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用指定信用卡消費滿額享5%回饋。<br/>＊優惠券需搭配護照使用。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="Welcia 使用指定支付方式消費，可享T-Point點數加倍送。每週一為點數加倍日。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Welcia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSGfvMyMd4hjShu-74qbCnoCh19dWZoKHs9vVEjF2hQKnVE9PVWBwmqoUM91IaRihKY4KFq1-KYKeBOtUxCNRi9aUvHJKEUqLrN1b41ttluvu_q-dgNkC_vRqbOeRG5Vj0CS0biDEZLxIPVqiiQ_2tAKKxW3BgPCtnYZVO9iwSmiR0mfjuNi962W_WV-tbkHs8vhXYK3eCOE8Jna92BdfMipA_gcYHIATFIMTJA7IPGvwqiOxHVPKAwdpyZIe9NP0eoT9vlq6h_v2x");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Welcia</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用指定支付方式消費，可享T-Point點數加倍送。<br/>＊每週一為點數加倍日。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-souvenir">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">伴手禮</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="驚安殿堂・唐吉訶德 消費滿10,000日圓 (不含稅)，出示優惠券除免稅外，再享5%折扣。部分商品不適用。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Don Quijote" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA6yEOlJ3onPy7uX8XS2jt6IjR8v2t3xWtyOkbPi_u27i1xmxSU399zwl25pzT8P6eBDSATKeLEnYSY_CwidJPQ1FzIsYqZg34v538BFHgNPNZUjQ9_hnZ-oyZejVDfJj_DK2CiEuV1u7GvWWN_39GMtxO9OlfHy9nPq0Zy4s_SxL9zXnaw0k7-sqio0YCNX4YVqI7VmVo792gsdOPpz7OM8jKljXKIAdmvkJdrRJy90ptnzqRTwwvRFS_WBbCGLH6_cN0oWuSpwKM7");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">驚安殿堂・唐吉訶德</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊消費滿10,000日圓 <span class="text-slate-400 dark:text-slate-500">(不含稅)</span>，出示優惠券除免稅外，再享5%折扣。<br/>＊部分商品不適用。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="東京芭娜娜 於成田、羽田機場免稅店使用JCB卡購買，可享95折優惠。需單筆消費滿1000日圓以上。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Tokyo Banana" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCRpkfDpQQcPOZ7I8MrogNvZzqT0Dr9Laqso9OthnP7yTOe6II8zO-JGLu0t2K5BMBpQQfhh1aoB2fXFNVkCsinQDG0dd-oviQamKmhvJo6-q_06itAoREnsDEX4-qhE4YLFpVQbdpXomPYnCl7BrfFGiq55TFq7FFbZRb9hMWt6Pb2V98Zr8uJImiNb5MwQSK366pS17MCHFv7aDx5CGNrEnfHhluWEkF86bDd2LW6HVxNVfwyCfG174VWFPqgqeBQd4lRNCDw-3Nn");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">東京芭娜娜</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊於成田、羽田機場免稅店使用JCB卡購買，可享95折優惠。<br/>＊需單筆消費滿1000日圓以上。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="白色戀人 於白色戀人公園，使用指定信用卡消費滿額可獲贈原創小禮品一份。禮品數量有限，送完為止。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Shiroi Koibito" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATUDG6DGQZAorqAg3o2fzeWw_y_0zvitI9G47wxWCC8gemSZRJ4rsoSYT8LwSKwioCnTpKah9PaKD7h55-WteeuFHOo3hsatON-7Bvyerh6VmV3hq5Vbw719Xu7gXWDhbrZUbJCsf6uDhqLos8IegAsX8F4k75vgz_zPi1IsafT_rQWgtr1oPcloBsrot6Zsg1Acgp10ZvdG27i_FN7hBICV_18RmXU_IECf4k_v5wV13HlVdcLNK8vu2G07yOPIEeOu2BxIzfvoVa");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">白色戀人</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊於白色戀人公園，使用指定信用卡消費滿額可獲贈原創小禮品一份。<br/>＊禮品數量有限，送完為止。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="ROYCE' 於機場免稅店消費滿額即可辦理退稅。部分信用卡與航空公司合作，可享額外折扣。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Royce' Chocolate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgfi65U_V1rH-bwpP-sv92zu6ENvue_WtQ8TewVpzbIfTm4EH-95E9ISdGg6lDCH88ZICGS1R0Lm6fRhqfEeKkFaT3k4L9D6SNsRPkAOSHmD7p3VD09eXT-c2BqshjaIfFnmI1NIywTh0ZYvTCsNecQLXSo79vRd-bMf0XZITjp6ZiDAUh-Nj2waXqmpF1Q37sMjFNNQmbVEoHfDaZg42Rtc70qR6ecREoO07kBMw5NFghmMJr13BPW-FleCwYDGmvJ2mzWGRzMo5D");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">ROYCE'</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊於機場免稅店消費滿額即可辦理退稅。<br/>＊部分信用卡與航空公司合作，可享額外折扣。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-<div class="scroll-mt-24 category-container" id="category-electronics">
-<div class="flex items-center gap-4 py-4 category-title">
-<h3 class="text-xl font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">電子商店</h3>
-<hr class="w-full border-slate-200 dark:border-slate-700"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="BIC CAMERA 使用指定信用卡享免稅10%外，再加碼最高7%折扣。藥妝、消耗品等折扣率不同，請以現場公告為準。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for BIC CAMERA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCua2X_NzZIzmOwizuZSnYArM9bRzogzwRnBGagdclUXNs0iqufv4ZCY91ZZ_WEogkrvUDN92ZrLKUMhGZvAuvnLktHRGgDacVVfK7uxz9aVEcbHgpb7RRuRzU4Sb83W4eqkjSgR1lDkB4ep5UcKFD7e0ZX7cMe0oC_2RD1sX4HAz5GAa3CxAyA3meefkmJ0ggj0zNxhDEPVr1m4S4AMmrYc1gM0RWM0XjeQiciWD6Jo8tj6uv8g0LSEwONhFM-C8CS4ehdI_b9fC43");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">BIC CAMERA</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用指定信用卡享免稅10%外，再加碼最高7%折扣。<br/>＊藥妝、消耗品等折扣率不同，請以現場公告為準。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="Yodobashi Camera 使用Visa卡消費滿5,000日圓以上，除免稅外可再享5%折扣。需出示優惠券畫面。Apple產品、遊戲主機等部分商品不適用。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Yodobashi Camera" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZkTQ4C4BnrRgmXFL209jSPbiOtmIh9Hd1nupKle_6CTLhCzNZ9ZwAqDTPFmU31u03nQdnEAYJQuq5e4uZVpsUa1b2Q8rAQ_-DU528yN2S_I3JatfSVXo0QV5I23V6omXzI480nS5kTbrTxcpUP7us9ZAFj0Nuv6cUfVGO4FO2Ey1DTaOkmLtntv0SuPrevSANbh_LBahK7BaFHj3gv2WoSxWNGhlaNUaWyH8bjUGc-Ldb7yORqW6phLQa62Y5qz_5BkPZgXdmOJe7");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Yodobashi Camera</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用Visa卡消費滿5,000日圓以上，除免稅外可再享5%折扣。<br/>＊需出示優惠券畫面。<br/>＊Apple產品、遊戲主機等部分商品不適用。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="EDION 愛電王 使用JCB卡消費，免稅後再享7%折扣優惠。需於結帳時出示專用優惠券。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Edion" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9ycFHUmh0u8D91nl3dFE1VGgD6bfxX0dhhV4idMggXcRb8aK9IdrSJ9Wo8YT0pnTKppxZQOuz5qywjLYsCe_BpHjw4pGWQvHe8u5SWmKFCGhRXRMdUj3Rvo6o1DydrKHuofMbccxt9x63LKTqIRvmYKtULhNpJGNET4QT1tOY-YIP3JK2ajd5v9RD3ayFcA78WM-OX5t41ehvel-cH8_tGwP5mSMVN-YVKN6DbxBGG3gRToqaj6xKQ-tSSDgi2QNhopQWopUp75cQ");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">EDION 愛電王</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用JCB卡消費，免稅後再享7%折扣優惠。<br/>＊需於結帳時出示專用優惠券。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="Sofmap 使用指定信用卡享5%回饋。免稅與信用卡折扣可併用，詳情請洽店員。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Sofmap" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA7gNANy7Ixndo6zRV61SKL_k6rUG48xTBqN2sC6ZQDhTM4d9hVcWE-B7f9RKBFP_y_HIcdkMh2WDiVsmubi4akTUoGKitxYDpXaK_IkBE9wE0_m5JuHWF9EPPVtf6QuEEi5onYGyDT8biJOdR48paTmGv9e_UTniuWDA3MQzmxHeae1YTQZKMbT-WvUvDw_Tyd-LxvUYGZN8LKvhUdmFPPyu2QvD1jAE0ZiPgcDQNtTsrkDp01viAZyHopgD_EcqDzH22Hnlyhjq7f");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Sofmap</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用指定信用卡享5%回饋。<br/>＊免稅與信用卡折扣可併用，詳情請洽店員。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-<div class="flex flex-col gap-4 p-5 bg-white dark:bg-slate-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow merchant-card" data-search-text="Yamada-Denki 使用聯邦吉鶴卡消費，享最高7%折扣。需出示優惠券，並以該卡結帳。">
-<div class="flex items-center gap-4">
-<div class="w-16 h-16 rounded-lg overflow-hidden bg-cover bg-center bg-no-repeat flex-shrink-0" data-alt="Logo for Yamada Denki" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBRwly8lnTUDMLFcaPV9-kolOri7GrJj3n-5t78qlvjIOVpHQoCqGAcgnY5Cm1PapBB8Eu83bxcMoWXyzHWqHBSlODu_Ge4MlnPdu5XXr2fD-3B82eH516CigvA2P3-N96pbkLAS6333inOyhKGtqnMm8cGyqAZ0moCO595ggMqKFurQOO7kdg9q6_LhEjO8_8PJBHW4VBQqdl227r1P3VbePjZrNxWnZPNBsO--AaOsVdhC7ylh687T4vtzOH9W1cfbS8OVwI_8dGO");'></div>
-<p class="text-slate-900 dark:text-white text-xl font-bold leading-tight">Yamada-Denki</p>
-</div>
-<div class="flex flex-col gap-2 flex-grow">
-<p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">＊使用聯邦吉鶴卡消費，享最高7%折扣。<br/>＊需出示優惠券，並以該卡結帳。</p>
-</div>
-<div class="flex justify-end mt-2">
-<button class="flex items-center justify-center h-9 px-4 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors">商戶資訊</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-900/50 py-12">
-<div class="max-w-6xl mx-auto px-4">
-<h2 class="text-slate-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-5 text-center">獨家折扣碼立即領取</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">Bic Camera 7% OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">JAPAN_BIC_2024</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2024/12/31</p>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-black px-3 py-1 font-bold text-black text-[10px] bg-white shadow-sm tracking-widest">ISETAN</div>
 </div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">伊勢丹新宿店</h4>
+<p class="text-gray-600 text-sm leading-relaxed">持卡享 5% 折扣優惠 Guest Card + 免稅服務。僅限外國遊客申請。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">單筆滿 3000 日圓即可享退稅服務。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">憑卡免費兌換 Hello Kitty 聯名購物袋</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 group-btn">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
 </button>
 </div>
 </div>
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">唐吉訶德 5% OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">DONKI_SAVE_5</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2024/12/31</p>
 </div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-700 text-red-700 px-3 py-1 font-bold text-[10px] bg-white text-center leading-tight shadow-sm tracking-widest">TAKASHIMAYA</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">高島屋</h4>
+<p class="text-gray-600 text-sm leading-relaxed">領取 Shopper's Card 享 95 折優惠，單筆滿 3,000 日圓可用。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">辦理退稅手續不收取手續費。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">贈送 Hello Kitty 限定版公仔</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
 </button>
 </div>
 </div>
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">松本清 10% OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">DRUGSTORE10</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2024/10/31</p>
 </div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
-</button>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-green-800 text-green-800 px-3 py-1 font-bold text-[10px] bg-white shadow-sm tracking-widest">DAIMARU</div>
 </div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">丸井百貨 10% OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">OIOI_CARD_10</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2024/12/31</p>
-</div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
-</button>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">大丸松坂屋</h4>
+<p class="text-gray-600 text-sm leading-relaxed">外國旅客專屬 5% 折扣優惠券，全日本分店皆可使用，需出示護照。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">免費寄放手提行李服務 (限當日)。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">消費滿額贈送餐飲抵用券 ¥1,000</p>
 </div>
 </div>
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">EDION 7% OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">EDION_EASY7</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2025/03/31</p>
-</div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
-</button>
-</div>
-</div>
-<div class="bg-white dark:bg-slate-800 rounded-xl shadow-md flex items-center relative overflow-hidden">
-<div class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-900/50"></div>
-<div class="flex-grow p-6 border-r-2 border-dashed border-slate-200 dark:border-slate-700">
-<h3 class="font-bold text-slate-800 dark:text-slate-100">樂天免稅店 2000円 OFF</h3>
-<p class="text-sm text-slate-500 dark:text-slate-400 mt-1">RAKUTEN_DUTYFREE</p>
-<p class="text-xs text-slate-400 dark:text-slate-500 mt-2">有效期限: 2024/11/30</p>
-</div>
-<div class="flex-shrink-0 px-4">
-<button class="flex items-center justify-center h-10 w-24 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary text-sm font-bold hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined text-base mr-1">content_copy</span>
-<span>複製</span>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
 </button>
 </div>
 </div>
 </div>
 </div>
 </div>
+<div class="category-section mb-20 scroll-mt-40" id="cat-transport">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">train</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">交通／鐵道／租車</h3>
 </div>
-<div class="xl:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
-<div class="flex overflow-x-auto no-scrollbar p-2 gap-2">
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-department">百貨</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-transport">交通／鐵道／租車</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-food">美食餐廳</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-attraction">景點／樂園</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-drugstore">藥妝店</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-souvenir">伴手禮</a>
-<a class="flex-shrink-0 flex items-center justify-center h-10 px-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary transition-colors focus:bg-primary/10 focus:text-primary dark:focus:bg-primary/20 dark:focus:text-primary whitespace-nowrap" href="#category-electronics">電子商店</a>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-blue-600 text-blue-600 px-3 py-1 font-bold text-[10px] bg-white shadow-sm tracking-widest">JR WEST</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">JR 西日本</h4>
+<p class="text-gray-600 text-sm leading-relaxed">網路預約 JR 關西廣域周遊券，享早鳥優惠價再折 3%。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">出示票券可享主要車站行李寄放優惠。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">隨票附贈京都鐵道博物館入場券</p>
 </div>
 </div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-600 text-red-600 px-3 py-1 font-bold text-[10px] bg-white shadow-sm text-center tracking-widest">NIPPON RENT</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">日本租車</h4>
+<p class="text-gray-600 text-sm leading-relaxed">線上預約租車享基本費用 10% 折扣，適用於全車型。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">免費提供中文 GPS 導航系統。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">免費升級兒童安全座椅</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-section mb-20 scroll-mt-40" id="cat-food">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">restaurant</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">美食餐廳</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-black text-black px-3 py-1 font-bold text-[10px] bg-white shadow-sm tracking-widest">一蘭拉麵</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">一蘭拉麵</h4>
+<p class="text-gray-600 text-sm leading-relaxed">購買伴手禮盒滿 5,000 日圓，贈送特製豚骨湯包一份。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">指定分店享優先排位 QR Code。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">優先入座免排隊服務 (需預約)</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-500 text-red-500 px-3 py-1 font-bold text-[10px] bg-white shadow-sm tracking-widest">SUSHIRO</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">壽司郎</h4>
+<p class="text-gray-600 text-sm leading-relaxed">消費滿額贈送限定扭蛋代幣，適用於東京市區店鋪。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">平日用餐享結帳金額 3% 折扣。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">季節限定壽司一盤免費招待</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-section mb-20 scroll-mt-40" id="cat-attraction">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">attractions</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">景點／樂園</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-600 text-red-600 px-3 py-1 font-bold text-[10px] bg-white shadow-sm text-center tracking-widest">TOKYO TOWER</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">東京鐵塔</h4>
+<p class="text-gray-600 text-sm leading-relaxed">Main Deck 入場券享 10% 折扣，贈送官方明信片。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">憑券享 Top Deck Tour 預約優先權。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">頂層觀景台快速通關禮遇</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-black text-black px-3 py-1 font-bold text-[10px] bg-white shadow-sm text-center tracking-widest">SHIBUYA SKY</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">Shibuya Sky</h4>
+<p class="text-gray-600 text-sm leading-relaxed">現場購票出示優惠券享 95 折，並可優先入場。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">線上預約可享額外 500 日圓折扣碼。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">Roof Top Bar 飲品第二杯半價</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-section mb-20 scroll-mt-40" id="cat-drugstore">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">medication</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">藥妝店</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-yellow-500 px-3 py-1 font-bold text-black text-[10px] bg-yellow-400 text-center leading-tight shadow-sm tracking-widest">MATSUMOTO</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">松本清</h4>
+<p class="text-gray-600 text-sm leading-relaxed">消費滿 3 萬日圓享 5% 折扣 + 10% 免稅。需出示優惠券。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">下載官方 App 綁定信用卡再享 200 點回饋。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">自有品牌商品額外 3% 折扣</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-500 px-3 py-1 font-bold text-white text-[10px] bg-red-500 text-center leading-tight shadow-sm tracking-widest">SUNDRUG</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">尚都樂客</h4>
+<p class="text-gray-600 text-sm leading-relaxed">化妝品與營養補充品滿 10,000 日圓再折 3%。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">每週六日會員點數 5 倍送。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">特定人氣面膜買五送一</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-blue-500 px-3 py-1 font-bold text-white text-[10px] bg-blue-500 text-center leading-tight shadow-sm tracking-widest">TSURUHA</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">鶴羽藥妝</h4>
+<p class="text-gray-600 text-sm leading-relaxed">北海道地區 500+ 分店適用，出示護照享 5% 折扣。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">人氣零食伴手禮滿額加贈 2% 折扣。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">滿額贈送北海道限定護手霜</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-section mb-20 scroll-mt-40" id="cat-souvenir">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">local_mall</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">伴手禮</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-yellow-600 text-yellow-800 px-3 py-1 font-bold text-[10px] bg-white shadow-sm text-center tracking-widest">TOKYO BANANA</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">東京香蕉</h4>
+<p class="text-gray-600 text-sm leading-relaxed">指定店鋪消費滿 5,000 日圓，贈送限定版貼紙與 5% 折扣。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">新品搶先預購資格。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">成田/羽田機場店享雙倍積分</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="category-section scroll-mt-40" id="cat-electronics">
+<div class="flex items-center gap-3 mb-8 border-b border-gray-200 pb-4">
+<span class="flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-white material-symbols-outlined shadow-lg shadow-red-500/30">laptop_mac</span>
+<h3 class="text-2xl font-bold text-gray-900 tracking-wide">3C 電子家電</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-red-600 px-3 py-1 font-bold text-red-600 text-[10px] bg-white shadow-sm tracking-widest">BIC CAMERA</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">Bic Camera</h4>
+<p class="text-gray-600 text-sm leading-relaxed">免稅 10% + 最高 7% 折扣（相機、手錶、家電）。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">提供機場配送服務，滿額免費。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">藥妝商品同享 5% 額外折扣</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-black px-3 py-1 font-bold text-black text-[10px] bg-white text-center leading-tight shadow-sm tracking-widest">YODOBASHI</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">Yodobashi Camera</h4>
+<p class="text-gray-600 text-sm leading-relaxed">Visa 卡友專屬 5% 折扣 + 10% 免稅。秋葉原店種類最齊全。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">電玩遊戲與模型玩具同享優惠。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">Point Card 會員免費辦理</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="merchant-card flex flex-col bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-primary/50 hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 h-full group">
+<div class="h-16 bg-gray-50 flex items-center justify-center border-b border-gray-100">
+<div class="border border-blue-600 px-3 py-1 font-bold text-blue-600 text-[10px] bg-white shadow-sm tracking-widest">SOFMAP</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-4">
+<div>
+<h4 class="text-gray-900 text-lg font-bold mb-2">Sofmap</h4>
+<p class="text-gray-600 text-sm leading-relaxed">二手電器與動漫模型專門店，額外 5% 折扣優惠。</p>
+<p class="text-gray-600 text-sm leading-relaxed mt-1">高價收購舊機換新機服務。</p>
+<div class="mt-3 pt-3 border-t border-gray-100 flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5">verified</span>
+<p class="text-xs text-gray-500">中古商品保固期免費延長</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-gray-100">
+<button class="w-full py-2.5 rounded-lg bg-gray-50 text-gray-600 text-sm font-bold hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2">
+                                    商戶資訊 <span class="material-symbols-outlined text-xs">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<aside class="hidden xl:flex sticky top-32 self-start flex-col gap-2 p-3 bg-white/90 backdrop-blur-xl border border-gray-200 rounded-2xl shadow-xl w-48 transition-all order-2 mr-10 mt-10">
+<p class="text-xs font-bold text-gray-500 uppercase tracking-widest px-3 py-2 mb-1 border-b border-gray-100">分類導覽</p>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-dept">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">storefront</span>
+<span class="text-sm font-medium">百貨公司</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-transport">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">train</span>
+<span class="text-sm font-medium">交通／鐵道</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-food">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">restaurant</span>
+<span class="text-sm font-medium">美食餐廳</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-attraction">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">attractions</span>
+<span class="text-sm font-medium">景點／樂園</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-drugstore">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">medication</span>
+<span class="text-sm font-medium">藥妝店</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-souvenir">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">local_mall</span>
+<span class="text-sm font-medium">伴手禮</span>
+</a>
+<a class="nav-category-link flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-primary/10 text-gray-600 hover:text-primary transition-all group focus:bg-primary/10 focus:text-primary" href="#cat-electronics">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-[20px]">laptop_mac</span>
+<span class="text-sm font-medium">3C 電子</span>
+</a>
+</aside>
+</div>
+<nav class="fixed bottom-0 inset-x-0 bg-white/95 backdrop-blur-md z-50 border-t border-gray-200 xl:hidden shadow-[0_-4px_10px_-1px_rgba(0,0,0,0.05)] pb-safe">
+<div class="flex overflow-x-auto no-scrollbar py-3 px-4 gap-3 snap-x snap-mandatory">
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-dept">
+<span class="material-symbols-outlined text-lg">storefront</span>
+            百貨公司
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-transport">
+<span class="material-symbols-outlined text-lg">train</span>
+            交通
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-food">
+<span class="material-symbols-outlined text-lg">restaurant</span>
+            美食
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-attraction">
+<span class="material-symbols-outlined text-lg">attractions</span>
+            景點
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-drugstore">
+<span class="material-symbols-outlined text-lg">medication</span>
+            藥妝
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-souvenir">
+<span class="material-symbols-outlined text-lg">local_mall</span>
+            伴手禮
+        </a>
+<a class="snap-center whitespace-nowrap px-4 py-2 bg-gray-50 hover:bg-primary/5 rounded-full text-sm font-bold text-gray-700 hover:text-primary flex items-center gap-2 border border-gray-200 shadow-sm flex-shrink-0 transition-colors" href="#cat-electronics">
+<span class="material-symbols-outlined text-lg">laptop_mac</span>
+            3C
+        </a>
+</div>
+</nav>
+<section class="bg-gray-100 py-20 border-t border-gray-200" id="coupons">
+<div class="max-w-[1200px] mx-auto px-6 md:px-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">confirmation_number</span>
+                    精選優惠券
+                </h2>
+<p class="text-gray-600">複製代碼並於結帳時出示，即刻享有折扣。</p>
+</div>
+<button class="text-primary font-medium hover:text-red-700 transition-colors flex items-center gap-1">查看所有優惠券 <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">驚安殿堂・唐吉訶德</h4>
+<p class="text-primary font-bold text-xl">¥2,000 OFF</p>
+<p class="text-xs text-gray-500 mt-1">消費滿 ¥30,000 (不含稅)</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">DNQ2023</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">愛電王 Edion</h4>
+<p class="text-primary font-bold text-xl">7% OFF</p>
+<p class="text-xs text-gray-500 mt-1">電飯鍋、吹風機等家電</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">EDN777</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">東京鐵塔</h4>
+<p class="text-primary font-bold text-xl">10% OFF</p>
+<p class="text-xs text-gray-500 mt-1">Main Deck 瞭望台門票</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">TKYTWR</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">樂天免稅店</h4>
+<p class="text-primary font-bold text-xl">¥1,000 OFF</p>
+<p class="text-xs text-gray-500 mt-1">銀座店限定</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">LOTTE1</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">Alpen Tokyo</h4>
+<p class="text-primary font-bold text-xl">5% OFF</p>
+<p class="text-xs text-gray-500 mt-1">運動用品專賣</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">ALPEN5</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+<div class="relative flex h-32 bg-white rounded-lg overflow-hidden border border-gray-200 shadow-sm hover:shadow-lg group hover:border-primary/30 transition-all">
+<div class="ticket-mask-l"></div>
+<div class="ticket-mask-r"></div>
+<div class="w-2/3 p-4 flex flex-col justify-center border-r border-dashed border-gray-200">
+<h4 class="text-gray-900 font-bold text-lg mb-1">ABC-Mart</h4>
+<p class="text-primary font-bold text-xl">¥500 OFF</p>
+<p class="text-xs text-gray-500 mt-1">購買兩雙以上適用</p>
+</div>
+<div class="w-1/3 bg-gray-50 flex flex-col items-center justify-center p-2 gap-2 hover:bg-gray-100 transition-colors cursor-pointer group-btn">
+<p class="text-xs text-gray-400 uppercase font-bold tracking-wider">優惠碼</p>
+<span class="font-mono text-gray-800 bg-gray-200 px-2 py-1 rounded text-sm select-all border border-gray-300">ABC22</span>
+<button class="text-primary flex items-center gap-1 text-xs font-bold mt-1 group-hover:text-red-700 transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span> 複製
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white py-12 px-6 md:px-10 border-t border-gray-200">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+<div class="col-span-1 md:col-span-2">
+<div class="flex items-center gap-3 text-gray-800 mb-4">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<h3 class="font-bold text-lg">日本信用卡優惠專案</h3>
+</div>
+<p class="text-gray-500 text-sm max-w-sm leading-relaxed">
+                連結旅客與日本最佳優惠。使用指定信用卡，即可在百貨公司、電器行與藥妝店享有獨家折扣與禮遇。
+            </p>
+</div>
+<div>
+<h4 class="text-gray-900 font-bold mb-4">分類導覽</h4>
+<ul class="space-y-2 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">購物優惠</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">美食饗宴</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">交通旅遊</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">其他服務</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-gray-900 font-bold mb-4">客戶服務</h4>
+<ul class="space-y-2 text-sm text-gray-500">
+<li><a class="hover:text-primary transition-colors" href="#">使用條款</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">隱私權政策</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">聯絡我們</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-gray-100 text-center text-xs text-gray-400">
+        © 2023 Japan Credit Card Offers. All rights reserved. Images for demonstration purposes only.
+    </div>
+</footer>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', () => {
         const searchInput = document.getElementById('searchInput');
-        const merchantCards = document.querySelectorAll('.merchant-card');
-        const categoryContainers = document.querySelectorAll('.category-container');
-        searchInput.addEventListener('input', function () {
-            const searchTerm = searchInput.value.toLowerCase().trim();
-            merchantCards.forEach(card => {
-                const searchData = card.getAttribute('data-search-text').toLowerCase();
-                if (searchData.includes(searchTerm)) {
-                    card.style.display = 'flex';
+        const clearBtn = document.getElementById('clearSearch');
+        // Select all categories and cards
+        const categories = document.querySelectorAll('.category-section');
+        const cards = document.querySelectorAll('.merchant-card');
+        function performSearch() {
+            const query = searchInput.value.trim().toLowerCase();
+            // 1. Filter Cards
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                // Fuzzy search: partially matching (substring) and case-insensitive
+                if (text.includes(query)) {
+                    card.classList.remove('hidden');
                 } else {
-                    card.style.display = 'none';
+                    card.classList.add('hidden');
                 }
             });
-            categoryContainers.forEach(container => {
-                const visibleCards = container.querySelectorAll('.merchant-card[style*="display: flex"]');
-                if (visibleCards.length > 0) {
-                    container.style.display = 'block';
+            // 2. Hide Empty Categories
+            categories.forEach(category => {
+                const visibleCards = category.querySelectorAll('.merchant-card:not(.hidden)');
+                const catId = category.id;
+                const navLink = document.querySelector(`a[href="#${catId}"]`);
+                if (visibleCards.length === 0) {
+                    category.classList.add('hidden');
+                    if(navLink) navLink.classList.add('hidden');
                 } else {
-                    container.style.display = 'none';
+                    category.classList.remove('hidden');
+                    if(navLink) navLink.classList.remove('hidden');
                 }
             });
-        });
+        }
+        searchInput.addEventListener('input', performSearch);
+        if(clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                performSearch();
+            });
+        }
     });
 </script>
-
 </body></html>
